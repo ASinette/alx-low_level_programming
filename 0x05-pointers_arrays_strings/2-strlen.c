@@ -2,30 +2,28 @@
 
 /**
  *
- *  * _strlen-find the lenght of a string
+ *  * swap_int - swap the values of two integers a and b
  *
- *   * @s: pointer to the string to check
+ *   * @a: a pointer to an int that will be updated
  *
- *    * Return: void
+ *    * @b: a pointer to an int that will be updated
  *
- *     */
+ *     * Return: 0
+ *
+ *      */
 
-
-
-
-
-int _strlen(char *s)
+void swap_int(int *a, int *b)
 
 {
 
-	int i = 0;
-
-	while (s[i])
-
-		i++;
+	int tmp;
 
 
 
-	return (i);
+	tmp = *a;
+
+	*a = *b;
+
+	*b = tmp;
 
 }
