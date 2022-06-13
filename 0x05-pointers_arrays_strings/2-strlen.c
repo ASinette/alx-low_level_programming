@@ -1,16 +1,18 @@
 #include "main.h"
 /**
- * _strlen-find the lenght of a string
- * @s: pointer to the string to check
- * Return: void
+ * _strlen - returns the length of a string
+ * @word: a pointer to int that will be updated
+ * Return: 0
  */
-
-
-int _strlen(char *s)
+int _strlen(char *word)
 {
-int i = 0;
-while (s[i])
-i++;
+int d;
 
-return (i);
+d = 0;
+
+while (word[d] != '\0')
+{
+d++;
+}
+return (d);
 }
