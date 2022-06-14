@@ -1,2 +1,3 @@
-#!/bin/bash
+gcc: fatal error: no input files
+compilation terminated.
 gcc -S 
