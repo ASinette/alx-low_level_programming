@@ -1,47 +1,45 @@
-nclude "lists.h"
+#include "lists.h"
 
 
 
 /**
  *
- *  *add_nodeint - adds a new node at the beginning
+ *  *print_listint - prints all elements of a list
  *
- *   *of a list
+ *   *@h: pointer to the first element
  *
- *    *@head: pointer to the start of the list
+ *    *Return: number of nodes
  *
- *     *@n: integer to be copied
- *
- *      *Description: Adds a new node at the beginning of a list
- *
- *       *Return: new node
- *
- *        */
+ *     */
 
 
 
-listint_t *add_nodeint(listint_t **head, const int n)
+size_t print_listint(const listint_t *h)
 
 {
 
-	listint_t *new;
+	size_t count = 0;
 
 
 
+	while (h != NULL)
 
+	{
 
-	new = malloc(sizeof(listint_t));
+		if (h->n == '\0')
 
-	if (new == NULL)
+			printf("[0] (nil)\n");
 
-		return (NULL);
+		else
 
-	new->n = n;
+			printf("%d\n", h->n);
 
-	new->next = *head;
+		h = h->next;
 
-	*head = new;
+		count++;
 
-	return (new);
+	}
+
+	return (count);
 
 }
