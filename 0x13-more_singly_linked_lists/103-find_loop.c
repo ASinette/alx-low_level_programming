@@ -1,33 +1,20 @@
-#include "lists.h"
+#ifndef MAIN_H
+#define MAIN_H
 
-/**
- * find_listint_loop - finds the loop in a linked list
- * @head: linked list to search for
- *
- * Return: address of the node where the loop starts, or NULL
+/*
+ * File: main.h
+ * AUthor: Onyiana
+ * Desc: Header file containing prototypes for all functions
+ *       written in the 0x14-bit_manipulation directory.
  */
-listint_t *find_listint_loop(listint_t *head)
-{
-listint_t *slow = head;
-listint_t *fast = head;
 
-if (!head)
-return (NULL);
+int _putchar(char c);
+unsigned int binary_to_uint(const char *b);
+void print_binary(unsigned long int n);
+int get_bit(unsigned long int n, unsigned int index);
+int set_bit(unsigned long int *n, unsigned int index);
+int clear_bit(unsigned long int *n, unsigned int index);
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
+int get_endianness(void);
 
-while (slow && fast && fast->next)
-{
-fast = fast->next->next;
-slow = slow->next;
-if (fast == slow)
-{
-slow = head;
-while (slow != fast)
-{
-slow = slow->next;
-fast = fast->next;
-}
-return (fast);
-}
-}
-return (NULL);
-}
+#endif /* MAIN_H */
